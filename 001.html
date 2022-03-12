@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Queueing System</title>
+    <style>
+        html {
+            font-family: 'Joystix Monospace', Courier, monospace;
+        }
+        
+        body {
+            text-align: center;
+            padding: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Queueing System</h1>
+
+    <p>Type your username and click Enter to play.</p>
+
+    <div class="form">
+        <input type="text" id="username" class="username">
+        <input type="submit" value="Enter" class="enter">
+    </div>
+
+    <div>
+        <p class="notify"></p>
+    </div>
+
+    <script>
+        var enter = document.querySelector('.enter');
+        var username = document.querySelector('.username');
+        var notify = document.querySelector('.notify')
+
+        function enterGame() {
+            if (username !== NaN) {
+                window.location.href = '002.html';
+                notify.textContent = '';
+            } else {
+                notify.textContent = 'Error: No Username!';
+            }
+        }
+
+        enter.addEventListener('click', enterGame);
+    </script>
+</body>
+
+</html>
